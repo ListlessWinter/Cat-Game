@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Pocket Monster Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>Micro Monster Adventure</h2>
+    <p>Use <b>Arrow Keys</b> to move. Walk in dark green grass to find monsters!</p>
+
+    <div id="game-container">
+        <div id="player"></div>
+        <div id="battle-screen">
+            <div class="battle-top">
+                <div><b>Enemy:</b> <span id="enemy-name">Wild Rat</span></div>
+                <div>HP: <span id="enemy-hp">20</span></div>
+            </div>
+            
+         <div class="battle-scene" id="battle-visual">  
+    <div class="monster-container enemy-side">
+        <img src="./Cats/axis.jpg" id="enemy-img" alt="Enemy">
+        <div class="shadow"></div>
+    </div>
+
+    <div class="monster-container player-side">
+        <img src="./Cats/cereza.png" id="player-img" alt="Player">
+        <div class="shadow"></div>
+    </div>
+</div>
+
+            <div class="battle-ui">
+                <div style="margin-bottom: 10px;">
+                    <b>You:</b> HP <span id="player-hp">30</span>/30
+                </div>
+                <div id="message-box" style="margin-bottom: 10px; height: 20px; color: blue;">A wild monster appeared!</div>
+                <div>
+                    <button onclick="attack()">Attack</button>
+                    <button onclick="heal()">Heal</button>
+                    <button onclick="run()">Run</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #222;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+#game-container {
+    position: relative;
+    width: 600px;  
+    height: 600px;
+    border: 4px solid #fff;
+    background-color: #4aad5e;
+}
+
+/* The Player (Red Square) */
+#player {
+    width: 40px;
+    height: 40px;
+    background-color: #ff5555;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: top 0.2s, left 0.2s;
+    z-index: 10;
+}
+
+/* Grass Patches */
+.grass {
+    width: 40px;
+    height: 40px;
+    background-color: #2d6b38;
+    position: absolute;
+}
+
+/* Battle Screen Overlay */
+#battle-screen {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    color: #000;
+    z-index: 20;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.battle-top {
+    padding: 20px;
+    background: #eee;
+    border-bottom: 2px solid #000;
+}
+
+.battle-scene {
+    flex-grow: 1;
+    position: relative; /* Allows us to move monsters anywhere inside this box */
+    background-color: #f8f8f8; /* Optional: Makes the battle floor look distinct */
+}
+
+/* Common style for both monster containers */
+.monster-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ENEMY POSITION (Top Right) */
+.enemy-side {
+    top: 50px;
+    right: 50px;
+}
+
+/* PLAYER POSITION (Bottom Left) */
+.player-side {
+    bottom: 50px;
+    left: 50px;
+}
+
+/* Image styling */
+.monster-container img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+/* Optional: Add a simple shadow so they don't look like they are floating */
+.shadow {
+    width: 160px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    margin-top: -10px; /* Pulls shadow under the feet */
+}
+
+.battle-scene img {
+    width: 240px;       /* Controls the size */
+    height: 240px;
+    object-fit: contain; /* Keeps the image from stretching */
+    image-rendering: pixelated; /* Keeps pixel art crisp */
+}
+
+.battle-ui {
+    padding: 20px;
+    border-top: 2px solid #000;
+    background: #eee;
+}
+
+button {
+    padding: 10px 20px;
+    font-family: inherit;
+    cursor: pointer;
+    border: 2px solid #000;
+    background: #fff;
+    margin-right: 10px;
+}
+
+button:hover {
+    background: #ddd;
+}
