@@ -188,3 +188,21 @@ function enemyTurn() {
         endBattle(false);
     }
 }
+
+// --- MOBILE MOVEMENT LOGIC ---
+window.moveLogic = function(direction) {
+    if (isMoving || inBattle) return;
+
+    let nextX = playerX;
+    let nextY = playerY;
+
+    if (direction === 'up') nextY -= TILE_SIZE;
+    else if (direction === 'down') nextY += TILE_SIZE;
+    else if (direction === 'left') nextX -= TILE_SIZE;
+    else if (direction === 'right') nextX += TILE_SIZE;
+
+    // Boundary check
+    if (nextX >= 0 && nextX < MAP_SIZE && nextY >= 0 && nextY < MAP_SIZE) {
+        movePlayer(nextX, nextY);
+    }
+};

@@ -128,3 +128,47 @@ button {
 button:hover {
     background: #ddd;
 }
+
+/* --- MOBILE CONTROLS --- */
+#controls {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    touch-action: manipulation; /* Prevents double-tap zoom */
+}
+
+.d-pad-row {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    background-color: #ddd;
+    border: 2px solid #555;
+    border-radius: 10px;
+    cursor: pointer;
+    /* Disable text selection on buttons */
+    user-select: none; 
+    -webkit-user-select: none;
+}
+
+.btn:active {
+    background-color: #bbb;
+    transform: scale(0.95);
+}
+
+/* --- RESPONSIVE SCALING --- */
+/* This makes the 600px game fit on small screens */
+@media (max-width: 620px) {
+    #game-container {
+        /* This magic line shrinks the game to fit the width */
+        transform: scale(0.55); 
+        transform-origin: top center;
+        margin-bottom: -250px; /* Removes the empty space created by shrinking */
+    }
+}

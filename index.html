@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Simple Pocket Monster Clone</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
 
@@ -44,6 +45,16 @@
         </div>
     </div>
 
+    <div id="controls">
+    <div class="d-pad-row">
+        <button class="btn" onmousedown="moveLogic('up')" ontouchstart="moveLogic('up')">⬆️</button>
+    </div>
+    <div class="d-pad-row">
+        <button class="btn" onmousedown="moveLogic('left')" ontouchstart="moveLogic('left')">⬅️</button>
+        <button class="btn" onmousedown="moveLogic('down')" ontouchstart="moveLogic('down')">⬇️</button>
+        <button class="btn" onmousedown="moveLogic('right')" ontouchstart="moveLogic('right')">➡️</button>
+    </div>
+</div>
     <script src="game.js"></script>
 </body>
 </html>
